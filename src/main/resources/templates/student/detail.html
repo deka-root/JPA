@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>selected student</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>학생번호</th>
+            <th>학생이름</th>
+            <th>학생나이</th>
+            <th>강의코드</th>
+            <th>수강상태</th>
+        </tr>
+        <tr>
+            <th th:text="${ student.studentCode }"></th>
+            <th th:text="${ student.studentName }"></th>
+            <th th:text="${ student.studentAge }"></th>
+            <th th:text="${ student.coursesCode }"></th>
+            <th th:text="${ student.enrollStatus }"></th>
+        </tr>
+    </table>
+</body>
+</html>

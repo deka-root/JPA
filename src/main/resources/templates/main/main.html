@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+</head>
+<body>
+
+    <h1>😋 Ohgiraffers College 😋</h1>
+
+    <form action="/student/{studentCode}" method="get">
+        <label for="studentCodeInput">학생 번호:</label>
+        <input type="number" id="studentCodeInput" name="studentCode">
+        <button type="submit">조회</button>
+    </form>
+
+    <!-- Controller 클래스에 findStudentbyCode메소드에서 @PathVariable을 사용할 경우, get 방식으로 페이지를 불러올 수 없음.
+        스크립트를 사용하여 페이지 이동이 중복되는 문제를 해결하기 위해서 폼 태그를 사용하여 GET 방식으로 요청을 보내고,
+        컨트롤러에서는 @RequestParam 어노테이션을 사용하여 요청 파라미터를 처리함. -->
+<!--    <script>-->
+<!--        // 학생 번호를 가져와서 detail 페이지로 이동-->
+<!--        function redirectToStudentDetail() {-->
+<!--            var studentCode = document.getElementById("studentCodeInput").value;-->
+<!--            if (studentCode !== "") {-->
+<!--                location.href = '/student/' + studentCode;-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+    <br>
+
+<!--    <button onclick="location.href='/student/3'">특정 학생 목록</button>-->
+    <button onclick="location.href='/student/list'">메뉴 학생 목록</button>
+
+    <button onclick="location.href='/student/querymethod'">쿼리 메소드 테스트</button>
+
+    <button onclick="location.href='/student/regist'">학생 등록</button>
+    <button onclick="location.href='/student/modify'">학생 수정</button>
+    <button onclick="location.href='/student/delete'">학생 삭제</button>
+
+</body>
+</html>

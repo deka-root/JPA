@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist student</title>
+</head>
+<body>
+    <h1>신규 학생 등록</h1>
+
+    <form action="/student/regist" method="post">
+        <label>학생 이름 : </label><input type="text" name="studentName"><br>
+        <label>학생 나이 : </label><input type="number" name="studentAge"><br>
+        <label>강의 목록 : </label>
+            <select name="coursesCode" id="coursesCode">
+            </select><br>
+        <label>수강 신청 상태 : </label>
+            <select name="enrollStatus">
+                <option value="Y">수강중</option>
+                <option value="N">수강 미신청</option>
+            </select><br>
+        <input type="submit" value="학생 등록">
+    </form>
+
+    <script>
+        fetch('/student/courses')
+            .then(res => res.json())
+            .then(data => {
+                const $coursesCode = document.getElementById('coursesCode');
+
+                for(let index in data) {
+                    const $option = document.createElement('option');
+                    $option.value = data[index].coursesCode;
+                    $option.textContent = data[index].coursesName;
+
+                    $coursesCode.appendChild($option);
+                }
+            });
+    </script>
+</body>
+</html>

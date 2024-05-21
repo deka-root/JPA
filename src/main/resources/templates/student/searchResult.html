@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search result</title>
+</head>
+<body>
+    <h1>[[${menuPrice}]]살을 초과하는 학생 명단</h1>
+    <table>
+        <tr>
+            <th>학생번호</th>
+            <th>학생이름</th>
+            <th>학생나이</th>
+            <th>강의코드</th>
+            <th>수강신청상태</th>
+        </tr>
+        <tr th:each="student : ${ studentList }">
+            <th th:text="${ student.studentCode }"></th>
+            <th th:text="${ student.studentName }"></th>
+            <th th:text="${ student.studentAge }"></th>
+            <th th:text="${ student.coursesCode }"></th>
+            <th th:text="${ student.enrollStatus }"></th>
+        </tr>
+    </table>
+</body>
+</html>
